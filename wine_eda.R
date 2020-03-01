@@ -1,22 +1,21 @@
 
+setwd("~/Desktop/Git/edwinbet")
+
 # =============================================================================
 # Wine EDA 
 # =============================================================================
-
-
 
 # -----------------------------------------------------------------------------
 # Packages
 # -----------------------------------------------------------------------------
 
 library(tidyverse)
-library(kableExtra)
 
 # =============================================================================
 # Data Section  
 # =============================================================================
 
-raw_wine_reviews <- read.csv("winemag-data-130k-v2.csv")
+raw_wine_reviews <- read.csv("data/winemag-data-130k-v2.csv")
 
 # =============================================================================
 # EDA Section 
@@ -88,9 +87,6 @@ wine_production <- wine_reviews %>%
 # Calfornia wine production 
 # ========================================================================
 
-ca_counties <- read.csv("~/Desktop/Git/edwinbet/california_county_list.csv") %>% 
-  setNames("county")
-
 ca_wine_reviews <- raw_wine_reviews %>% 
   filter(province == "California") %>% 
   group_by(region_1) %>% 
@@ -112,7 +108,7 @@ ca_wine_reviews <- raw_wine_reviews %>%
 
 ca_wine_prod <- ca_wine_reviews %>% 
   group_by(county) %>% 
-  summarise(count = n()) %>% 
+  summarise(count = n()) %>%
   right_join(ca_counties, by = "county") %>% 
   write_csv("production_by_county.csv")
 
