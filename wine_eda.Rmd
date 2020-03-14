@@ -21,7 +21,10 @@ knitr::opts_chunk$set(fig.width = 12, fig.height = 4,
   warning=FALSE, message=FALSE, echo = FALSE)
 
 # set working directory 
-setwd("~/Desktop/Git/edwinbet")
+# setwd("~/Desktop/Git/edwinbet")
+
+# Reema's wd 
+setwd("~/Documents/GitHub/edwinbet")
 
 # load packages 
 library(tidyverse)

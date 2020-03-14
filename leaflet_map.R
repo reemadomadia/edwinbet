@@ -1,5 +1,5 @@
 
-setwd("~/Desktop/Git/edwinbet")
+#setwd("~/Desktop/Git/edwinbet")
 
 # =============================================================================
 # Maps  
@@ -8,7 +8,8 @@ setwd("~/Desktop/Git/edwinbet")
 # -----------------------------------------------------------------------------
 # Packages
 # -----------------------------------------------------------------------------
-
+install.packages("geojsonio")
+install.packages("leaflet")
 library(tidyverse)
 library(geojsonio)
 library(leaflet)

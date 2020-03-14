@@ -1,0 +1,18 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Tried to recreate the points vs price graph from the html, not getting the same results.
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+wine <- read.csv("data/winemag-data-130k-v2.csv")
+str(wine)
+```
+```{r}
+ggplot(wine, aes(x=points, y=price)) + geom_point() + geom_abline()
+```
